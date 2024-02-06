@@ -81,8 +81,10 @@ def process(cur, conn, filepath):
                         )
                         ON CONFLICT (actor_id) DO NOTHING
                 """
+                
                 print(insert_statement_actors)
                 cur.execute(insert_statement_actors)
+                
 
                 #Insert data into tables here
                 insert_statement_repo = f"""
