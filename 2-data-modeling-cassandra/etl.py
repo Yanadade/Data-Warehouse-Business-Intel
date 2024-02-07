@@ -71,8 +71,6 @@ def process(session, filepath):
         with open(datafile, "r", encoding="utf-8") as f:
             data = json.loads(f.read())
             for each in data:
-                # Print some sample data
-                #print(each["id"], each["type"], each["actor"]["login"])
 
                 # Insert data into tables here
                 try:
