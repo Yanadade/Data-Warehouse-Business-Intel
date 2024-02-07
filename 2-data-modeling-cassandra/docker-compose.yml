@@ -1,11 +1,10 @@
 version: "3.9"
 
 services:
-  postgres:
+  cassandra:
     image: cassandra:4.0.1
-    
     volumes:
-      - postgres-data-volume:/var/lib/cassandra
+      - cassandra-data-volume:/var/lib/cassandra
     ports:
       - 9042:9042
 
