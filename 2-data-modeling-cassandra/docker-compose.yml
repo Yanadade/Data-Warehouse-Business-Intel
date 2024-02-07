@@ -3,21 +3,11 @@ version: "3.9"
 services:
   postgres:
     image: cassandra:4.0.1
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+    
     volumes:
-      - postgres-data-volume:/var/lib/postgresql/data
+      - postgres-data-volume:/var/lib/cassandra
     ports:
       - 9042:9042
-  adminer:
-    image: adminer:4.8.1
-    restart: always
-    depends_on:
-      - postgres
-    ports:
-      - 8080:8080
 
 volumes:
-  postgres-data-volume:
+  cassandra-data-volume:
