@@ -14,8 +14,8 @@ docker run -p 8080:80 nginx
 `````````````````````````````````````````````
 
 **Port**  
-        *8080 = Adminer
-        *5432 = Postgres
+        * 8080 = Adminer
+        * 5432 = Postgres
 
 ## Running Postgres
 ----------------------------------------
