@@ -22,7 +22,7 @@ docker run -p 8080:80 nginx
 ----------------------------------------
 
 `````````````````````````````````````````````
-'$docker compose up
+docker compose up
 `````````````````````````````````````````````
 
 Connect postgres and login: http://localhost:8080/
