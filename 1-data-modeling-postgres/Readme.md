@@ -1,11 +1,11 @@
 # 1.Data Modeling with PostgreSQL
 
-### Get Start on Codespaces
+## Get Start on Codespaces
 ---------------------------------------
 
 Install psycopg2
 `````````````````````````````````````````````
-'$pip install psycopg2'
+pip install psycopg2
 `````````````````````````````````````````````
 
 docker nginx
@@ -14,10 +14,10 @@ docker run -p 8080:80 nginx
 `````````````````````````````````````````````
 
 **Port**  
-        8080 = Adminer
-        5432 = Postgres
+        *8080 = Adminer
+        *5432 = Postgres
 
-### Running Postgres
+## Running Postgres
 ----------------------------------------
 
 `````````````````````````````````````````````
@@ -32,7 +32,7 @@ Connect postgres and login: http://localhost:8080/
 * Password: postgres
 * Database: postgres
 
-### Insert your 'code' here
+## Insert your 'code' here
 ----------------------------------------
 
 create table:
