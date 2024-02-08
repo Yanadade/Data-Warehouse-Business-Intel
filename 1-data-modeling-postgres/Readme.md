@@ -1,13 +1,11 @@
 # 1.Data Modeling with PostgreSQL
 
 ## Get Start on Codespaces
----------------------------------------
 
 Install psycopg2
 `````````````````````````````````````````````
 pip install psycopg2
 `````````````````````````````````````````````
-
 docker nginx
 `````````````````````````````````````````````
 docker run -p 8080:80 nginx
@@ -19,7 +17,6 @@ docker run -p 8080:80 nginx
 * 5432 = Postgres
 
 ## Running Postgres
-----------------------------------------
 
 `````````````````````````````````````````````
 docker compose up
@@ -33,24 +30,27 @@ Connect postgres and login: http://localhost:8080/
 * Password: postgres
 * Database: postgres
 
-## Insert your 'code' here
-----------------------------------------
+## Insert your `code` here
 
 create table:
-
 `````````````````````````````````````````````
 python create_tables.py
 `````````````````````````````````````````````
 
 insert data into tables:
-
 `````````````````````````````````````````````
 python etl.py
 `````````````````````````````````````````````
 
-### close webserver
-----------------------------------------
+### Close webserver
+
 To shutdown, press Ctrl+C and run: 
 `````````````````````````````````````````````
 docker compose down
 `````````````````````````````````````````````
+
+
+## Entity Relationship (ER) Diagram
+
+
+![](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/1-data-modeling-postgres/ERD-01%20DW%20%26%20BI.png)
