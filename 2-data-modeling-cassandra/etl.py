@@ -74,7 +74,7 @@ def process(session, filepath):
 
                 # Insert data into tables here
                 try:
-                    query = f"""
+                    query = """
                     INSERT INTO events (
                         id, 
                         type, 
@@ -84,17 +84,14 @@ def process(session, filepath):
                         repo_id, 
                         repo_name
                     ) 
-                    VALUES ('{each["id"]}', 
-                            '{each["type"]}', 
-                            '{each["created_at"]}', 
-                            '{each["actor"]["id"]}', 
-                            '{each["actor"]["login"]}', 
-                            '{each["repo"]["id"]}', 
-                            '{each["repo"]["name"]}'
-                            )
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
                     """
-                    session.execute(query)
-                    
+                    session.execute(query, 
+                                    (each["id"], each["type"], 
+                                    each["created_at"], each["actor"]["id"], 
+                                    each["actor"]["login"], each["repo"]["id"], 
+                                    each["repo"]["name"]))
+                
                 except:
                     query = f"""
                     INSERT INTO events (
@@ -113,12 +110,12 @@ def process(session, filepath):
                             '{each["actor"]["login"]}', 
                             '{each["repo"]["id"]}', 
                             '{each["repo"]["name"]}'
-                            )
+                    )
                     """
                     session.execute(query)
 
-event_types = ['IssuesEvent','PullRequestReviewCommentEvent','CreateEvent','PullRequestEvent','PushEvent','PublicEvent'
-            ,'WatchEvent','DeleteEvent','PullRequestReviewEvent','ReleaseEvent', 'IssueCommentEvent']
+event_types = ['IssuesEvent','PullRequestReviewCommentEvent','CreateEvent','PullRequestEvent','PushEvent','PublicEvent',
+               'WatchEvent','DeleteEvent','PullRequestReviewEvent','ReleaseEvent', 'IssueCommentEvent']
 
 #connect to cassandra 
 def main():
