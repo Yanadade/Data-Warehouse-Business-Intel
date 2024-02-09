@@ -2,7 +2,6 @@
 
 ## Get Start on Codespaces
 
-Install psycopg2
 `````````````````````````````````````````````
 pip install -r requirements.txt
 `````````````````````````````````````````````
@@ -16,7 +15,7 @@ docker compose up
 
 ## Insert your `code` here
 
-create table ,Insert and select data:
+Create Table ,Insert and Select Data:
 `````````````````````````````````````````````
 python etl.py
 `````````````````````````````````````````````
