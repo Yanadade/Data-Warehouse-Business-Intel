@@ -120,12 +120,12 @@ def process(session, filepath):
 event_types = ['IssuesEvent','PullRequestReviewCommentEvent','CreateEvent','PullRequestEvent','PushEvent','PublicEvent'
             ,'WatchEvent','DeleteEvent','PullRequestReviewEvent','ReleaseEvent', 'IssueCommentEvent']
 
-#connect to cassandra
+#connect to cassandra 
 def main():
-    cluster = Cluster(['127.0.0.1'])
-    session = cluster.connect()
+    cluster = Cluster(['127.0.0.1'])  # set IP: 127.0.0.1, port: 9042
+    session = cluster.connect()  # connect to session in cassandra
 
-    # Create keyspace
+    # Create keyspace 
     try:
         session.execute(
             """
@@ -136,7 +136,7 @@ def main():
     except Exception as e:
         print(e)
 
-    # Set keyspace
+    # Set keyspace, table, query
     try:
         session.set_keyspace("github_events")
     except Exception as e:
@@ -148,6 +148,7 @@ def main():
     process(session, filepath="../data")
 
     print("Query for \'Events\' events")
+
     # Select data in Cassandra and print them to stdout
     query = """
     SELECT id, type, created_at, actor_id, actor_login, repo_id, repo_name from events WHERE type = 'Events' ALLOW FILTERING
@@ -161,6 +162,7 @@ def main():
         print(row)
 
     print("Number of each event by type, created_at: >= '2022-08-17T15:54:00Z'")
+
     for event_type in event_types:
         # Select data in Cassandra and print them to stdout
         query = """
