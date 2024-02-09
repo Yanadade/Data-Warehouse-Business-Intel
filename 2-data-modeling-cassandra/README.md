@@ -1,4 +1,4 @@
-# 1.Data Modeling with Cassandra
+# 2.Data Modeling with Cassandra
 
 ## Get Start on Codespaces
 
