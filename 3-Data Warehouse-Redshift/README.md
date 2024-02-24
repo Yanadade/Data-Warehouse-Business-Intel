@@ -1,5 +1,4 @@
 # Building a Data Warehouse
-# Building a Data Warehouse
 
 ## Getting Started
 ### create cluster AWS Redshift
@@ -72,10 +71,10 @@ see the result in
 example result
 | event_id	  |   event_type      |actor_login  |	repo_name	                    | created_at           |
 | :---        |   :---            |:---:        |:---:                          | ---:                 |
-|23487929637  |	IssueCommentEvent	|  xx	  |xx	            | xxx |
+|23487929637  |	IssueCommentEvent	|  xx	  |xx	            | xx |
 |23487929676	|PushEvent	        |  xx	  |xx	          | xx |
 |23487929674	|PushEvent	        |  xx	  |xx        |	xx |
-|23487929661	|PushEvent	        |  xx	|xx |xxx  |
+|23487929661	|PushEvent	        |  xx	|xx |xx  |
 
 To close all service
 - S3 empty bucket
