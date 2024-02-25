@@ -70,10 +70,16 @@ iam_role 'arn:aws:iam::905418110941:role/LabRole'
 json 's3://dw-yana/events_json_path.json';
 ```
 
-To show data in table github_event:
+To show data in table public:
 
 ```sh
-select * from github_event
+select
+    eventname, 
+    avg(commission) 
+from 
+    sales
+join event on sales.eventid = event.eventid
+group by eventname
 ```
 ![Redshift Query](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift_query.JPG)
 
