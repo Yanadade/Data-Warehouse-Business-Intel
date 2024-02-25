@@ -2,8 +2,16 @@
   "jsonpaths": [
     "$.id",
     "$.type",
+    "$.actor.id",
     "$.actor.login",
+    "$.actor.url",
+    "$.repo.id",
     "$.repo.name",
+    "$.repo.url",
+    "$.org.id",
+    "$.org.login",
+    "$.org.url",
+    "$.public",
     "$.created_at"
   ]
 }
