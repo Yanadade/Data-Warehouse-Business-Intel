@@ -43,10 +43,10 @@
   ![AWS Redshift](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift.JPG)
 
 ### 3. S3 Connection path
-![S3 Connection path](xxx)
+![S3 Connection path](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/S3%20connect%20path.JPG)
 
 ### 4. Redshift Connection path
-![Redshift Connection path](xxx)
+![Redshift Connection path](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/Redshift%20connect%20path.JPG)
 
 ## create table in Redshift
 
