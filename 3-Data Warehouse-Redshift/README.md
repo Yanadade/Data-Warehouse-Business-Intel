@@ -70,7 +70,7 @@ iam_role 'arn:aws:iam::905418110941:role/LabRole'
 json 's3://dw-yana/events_json_path.json';
 ```
 
-To show data in table public:
+To show data in table github_event, public :
 
 ```sh
 select
