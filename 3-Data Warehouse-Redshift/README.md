@@ -40,7 +40,7 @@
   - leave the remaining default
   - create cluster
 
-  ![AWS Redshift](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift.JPG)
+![AWS Redshift](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift.JPG)
 
 ### 3. S3 Connection path
 ![S3 Connection path](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/S3%20connect%20path.JPG)
