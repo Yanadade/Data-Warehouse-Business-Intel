@@ -1,7 +1,26 @@
 # Building a Data Warehouse
 
 ## Getting Started
-### create cluster AWS Redshift
+
+### 1. Create AWS S3
+* go to aws console - S3 
+* create bucket
+  - make sure - [x] **Block all public access** 
+  - keep - [x] Disable for Bucket Versioning
+  - create bucket
+### upload json to bucket
+* Json event file
+* Json path file
+
+![AWS S3](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/S3.JPG)
+
+### Check IAM Role for LabRole
+* go IAM
+* choose Role
+* seach "LabRole"
+* copy ARN
+
+### 2. Create cluster AWS Redshift and enable public
 * go to aws console - Redshift 
 * Provision (create) cluster
 
@@ -21,21 +40,13 @@
   - leave the remaining default
   - create cluster
 
-### create bucket AWS S3
-* go to aws console - S3 
-* create bucket
-  - make sure - [x] **Block all public access** 
-  - keep - [x] Disable for Bucket Versioning
-  - create bucket
-### upload json to bucket
-* Json event file
-* Json path file
+  ![AWS Redshift](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift.JPG)
 
-### Check IAM Role for LabRole
-* go IAM
-* choose Role
-* seach "LabRole"
-* copy ARN
+### 3. S3 Connection path
+![S3 Connection path](xxx)
+
+### 4. Redshift Connection path
+![Redshift Connection path](xxx)
 
 ## create table in Redshift
 
@@ -49,15 +60,14 @@ CREATE TABLE IF NOT EXISTS github_event (
   
 )
 ```
-![AWS Redshift query console](xxx)
 
 ## insert data from json with json_path
 
 ```sh
 copy github_event
-from 'xxx'
-iam_role 'xxx' 
-json 'xxx';
+from 's3://dw-yana/github_events_01.json'
+iam_role 'arn:aws:iam::905418110941:role/LabRole' 
+json 's3://dw-yana/events_json_path.json';
 ```
 
 To show data in table github_event:
@@ -65,45 +75,12 @@ To show data in table github_event:
 ```sh
 select * from github_event
 ```
-see the result in 
-[github_event_query_result.csv](xxx)
-
-example result
-| event_id	  |   event_type      |actor_login  |	repo_name	                    | created_at           |
-| :---        |   :---            |:---:        |:---:                          | ---:                 |
-|23487929637  |	IssueCommentEvent	|  xx	  |xx	            | xx |
-|23487929676	|PushEvent	        |  xx	  |xx	          | xx |
-|23487929674	|PushEvent	        |  xx	  |xx        |	xx |
-|23487929661	|PushEvent	        |  xx	|xx |xx  |
+![Redshift Query](https://github.com/Yanadade/Data-Warehouse-Business-Intel/blob/main/3-Data%20Warehouse-Redshift/Image/redshift_query.JPG)
 
 To close all service
 - S3 empty bucket
 - Delete S3 bucket
 - Delete Redshift cluster** with out keeping snapshot** - [ ] snap shot 
-
-
-## watch cost explorer
-
-![cost](xxx)
-
-
-![AWS Redshift query console](xxx)
-
-## Data Model
-![data model](xxx)
-
-### 1. Create AWS S3
-![AWS S3]()
-
-### 2. Create AWS Redshift and enable public
-![AWS Redshift](xxx)
-
-### 3. S3 Connection path
-![S3 Connection path](xxx)
-
-### 4. Redshift Connection path
-![Redshift Connection path](xxx)
-
 
 ## Started
 ### Getting Started
